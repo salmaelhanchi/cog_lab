@@ -43,6 +43,6 @@ The project is structured in a modular and reproducible format:
 *   **`run_experiment.ipynb`:** A Jupyter Notebook that acts as the main "lab bench" for configuring and executing the experiment.
 *   **Experiment Tracking:** All experimental runs, including hyperparameters, learning curves, and final accuracy, are logged using **MLflow**. The results can be viewed and compared by running `mlflow ui` from the project's root directory.
 
-## Conclusion
+## Next step
 
 Analyze LSTM hidden state time series , and compute time integration 
