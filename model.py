@@ -1,29 +1,25 @@
-# imports
+# In model.py
+
 import torch
 import torch.nn as nn
 
-
-# class with Module inherited
 class MemoryRNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
-        
         super(MemoryRNN, self).__init__()
         
-        # setting up the RNN
-        # hyperparameters
         self.hidden_size = hidden_size
-        self.rnn = nn.RNN(
-            input_size=input_size,
-            # memory units
+        
+        self.lstm = nn.LSTM(
+            input_size=input_size, 
             hidden_size=hidden_size, 
             batch_first=True
         )
-        # fully connected hidden state
         self.fc = nn.Linear(hidden_size, output_size)
-    
-    # h_n final hidden state    
+
     def forward(self, x):
-        _ , h_n = self.rnn(x)
-        # standarize for liear layer
+        # An LSTM's hidden state is a tuple: (hidden_state, cell_state)
+        # We only need the final hidden_state for our classifier.
+        _ , (h_n, c_n) = self.lstm(x) 
+        
         output = self.fc(h_n.squeeze(0))
         return output
