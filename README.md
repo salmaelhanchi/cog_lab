@@ -33,7 +33,7 @@ The investigation was conducted in two primary phases, yielding a critical and i
 
     This architectural difference fundamentally reshaped the "loss landscape," making it a smooth, easily navigable valley and rendering the learning process robust and efficient.
 
-##Technical Implementation
+## Technical Implementation
 
 The project is structured in a modular and reproducible format:
 
@@ -43,6 +43,6 @@ The project is structured in a modular and reproducible format:
 *   **`run_experiment.ipynb`:** A Jupyter Notebook that acts as the main "lab bench" for configuring and executing the experiment.
 *   **Experiment Tracking:** All experimental runs, including hyperparameters, learning curves, and final accuracy, are logged using **MLflow**. The results can be viewed and compared by running `mlflow ui` from the project's root directory.
 
-##Conclusion
+## Conclusion
 
 Analyze LSTM hidden state time series , and compute time integration 
